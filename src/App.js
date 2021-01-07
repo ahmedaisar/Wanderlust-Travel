@@ -1,13 +1,10 @@
-import './App.css';
-import Test from "./Component/Test.js"
+import "./App.css";
+import RoutePack from "./RoutePack";
 
 function App() {
   return (
     <>
-    <div className="App">
-      Hello World!
-    </div>
-    <Test/>
+      <RoutePack />
     </>
   );
 }
