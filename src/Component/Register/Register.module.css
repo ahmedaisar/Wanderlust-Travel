@@ -1,0 +1,35 @@
+.container form {
+  padding: 20px 50px 40px 50px;
+  width: fit-content;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #0a122a;
+}
+.heading {
+  width: fit-content;
+  margin: 40px auto 0 auto;
+}
+label {
+  color: white;
+}
+input {
+  padding: 10px;
+  border: 0;
+  outline: 0;
+  margin-top: 5px;
+}
+.fieldContent {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.registerBtn {
+  margin-top: 20px;
+  background-color: #698f3f;
+  cursor: pointer;
+}
+.registerBtn:hover {
+  background-color: #e7decd;
+  color: black;
+}

@@ -3,6 +3,7 @@
   padding: 50px;
   margin: 200px auto;
   background-color: grey;
+  border-radius: 10px;
 }
 
 .btnContainer {
