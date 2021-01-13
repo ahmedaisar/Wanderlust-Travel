@@ -1,0 +1,8 @@
+.container {
+  list-style: none;
+  padding: 30px;
+  width: fit-content;
+}
+.hotelName {
+  margin: 10px auto;
+}

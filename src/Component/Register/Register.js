@@ -46,37 +46,60 @@ const Register = () => {
       <h3 className={Styles.heading}>REGISTER ACCOUNT</h3>
       <form onSubmit={(e) => handleRegister(e)}>
         <div className={Styles.fieldContent}>
-          <label htmlFor="firstName_input">First Name</label>
+          <label htmlFor="firstName_input" className={Styles.label}>
+            First Name
+          </label>
           <input
             placeholder="First Name"
             id="firstName_input"
+            className={Styles.input}
             size="50"
             required
           />
         </div>
         <div className={Styles.fieldContent}>
-          <label htmlFor="lastName_input">Last Name</label>
-          <input placeholder="Last Name" id="lastName_input" required />
-        </div>
-        <div className={Styles.fieldContent}>
-          <label htmlFor="email_input">Email</label>
-          <input placeholder="Enter Email" id="email_input" required />
-        </div>
-        <div className={Styles.fieldContent}>
-          <label htmlFor="password1_input">Enter Password</label>
+          <label htmlFor="lastName_input" className={Styles.label}>
+            Last Name
+          </label>
           <input
-            type="password"
-            placeholder="Enter Password"
-            id="password1_input"
+            placeholder="Last Name"
+            id="lastName_input"
+            className={Styles.input}
             required
           />
         </div>
         <div className={Styles.fieldContent}>
-          <label htmlFor="password2_input">Enter Password Again</label>
+          <label htmlFor="email_input" className={Styles.label}>
+            Email
+          </label>
+          <input
+            placeholder="Enter Email"
+            id="email_input"
+            className={Styles.input}
+            required
+          />
+        </div>
+        <div className={Styles.fieldContent}>
+          <label htmlFor="password1_input" className={Styles.label}>
+            Enter Password
+          </label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            id="password1_input"
+            className={Styles.input}
+            required
+          />
+        </div>
+        <div className={Styles.fieldContent}>
+          <label htmlFor="password2_input" className={Styles.label}>
+            Enter Password Again
+          </label>
           <input
             type="password"
             placeholder="Enter Password Again"
             id="password2_input"
+            className={Styles.input}
             required
           />
         </div>

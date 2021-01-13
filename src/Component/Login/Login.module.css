@@ -1,8 +1,49 @@
+.container {
+  background-color: grey;
+  height: 100vh;
+}
 .container form {
   padding: 50px;
   width: fit-content;
   margin: 50px auto;
   display: flex;
   flex-direction: column;
-  background-color: grey;
+  background-color: white;
+  border-radius: 30px;
+}
+.heading {
+  width: fit-content;
+  font-size: xx-large;
+  font-weight: 700;
+  margin: 20px auto;
+}
+.fieldContent {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.label {
+  color: white;
+}
+.input {
+  padding: 10px;
+  border: hidden;
+  border-bottom: 2px solid black;
+  outline: 0;
+  margin-top: 10px;
+}
+.loginBtn {
+  margin-top: 20px;
+  cursor: pointer;
+}
+.loginBtn {
+  margin: 30px auto 0 auto;
+  width: 200px;
+  border-radius: 50px;
+  border: 0;
+}
+.signupBtn {
+  text-decoration: none;
+  margin: 50px auto 0 auto;
+  width: fit-content;
 }

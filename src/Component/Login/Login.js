@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router";
 import Styles from "./Login.module.css";
 import fire from "../../firebase.js";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -18,8 +19,7 @@ const Login = () => {
         .auth()
         .signInWithEmailAndPassword(email, password)
         .then((user) => {
-          console.log(user);
-          setCurrentUser(user);
+          setCurrentUser(user.user);
         })
         .catch((error) => {
           var errorCode = error.code;
@@ -34,14 +34,31 @@ const Login = () => {
   return (
     <div className={Styles.container}>
       <form onSubmit={(e) => handleLogin(e)}>
-        <input placeholder="Enter Email" id="email_input" required />
-        <input
-          type="password"
-          placeholder="Enter Password"
-          id="password_input"
-          required
-        />
-        <button>LOGIN</button>
+        <h2 className={Styles.heading}>Login</h2>
+        <div className={Styles.fieldContent}>
+          <label htmlFor="email_input">Email</label>
+          <input
+            placeholder="Enter Email"
+            id="email_input"
+            className={Styles.input}
+            size="50"
+            required
+          />
+        </div>
+        <div className={Styles.fieldContent}>
+          <label htmlFor="password_input">Password</label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            id="password_input"
+            className={Styles.input}
+            required
+          />
+        </div>
+        <button className={Styles.loginBtn}>LOGIN</button>
+        <span className={Styles.signupBtn}>
+          New User? <Link to="/register">Sign up</Link>
+        </span>
       </form>
     </div>
   );

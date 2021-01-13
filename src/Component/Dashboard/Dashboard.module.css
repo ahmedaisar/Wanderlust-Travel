@@ -1,4 +1,28 @@
 .nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
   background-color: grey;
-  font-weight: 500;
+}
+.message {
+  margin-left: 5%;
+  font-size: x-large;
+}
+.buttons {
+  margin-right: 5%;
+  width: 15vw;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.searchBox {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 25px auto;
+}
+.searchInput {
+  padding: 10px 25px;
+  outline: none;
 }

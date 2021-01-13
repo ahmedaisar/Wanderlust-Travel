@@ -10,10 +10,10 @@
   width: fit-content;
   margin: 40px auto 0 auto;
 }
-label {
+.label {
   color: white;
 }
-input {
+.input {
   padding: 10px;
   border: 0;
   outline: 0;
