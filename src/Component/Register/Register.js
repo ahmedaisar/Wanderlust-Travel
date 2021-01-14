@@ -1,5 +1,7 @@
 import Styles from "./Register.module.css";
 import fire from "../../firebase.js";
+import background from "./register-page.jpg";
+import logo from "./logo.png";
 
 const Register = () => {
   const handleRegister = (e) => {
@@ -43,46 +45,33 @@ const Register = () => {
 
   return (
     <div className={Styles.container}>
-      <h3 className={Styles.heading}>REGISTER ACCOUNT</h3>
-      <form onSubmit={(e) => handleRegister(e)}>
-        <div className={Styles.fieldContent}>
-          <label htmlFor="firstName_input" className={Styles.label}>
-            First Name
-          </label>
+      <img class={Styles.background} src={background} alt="login page" />
+      <div className={Styles.formContainer}>
+        <div className={Styles.headingContainer}>
+          <img src={logo} alt="logo" width="100" height="100" />
+          <h3>Wanderlust</h3>
+        </div>
+        <form className={Styles.form} onSubmit={(e) => handleRegister(e)}>
+          <h3 className={Styles.heading}>Create Account</h3>
           <input
             placeholder="First Name"
             id="firstName_input"
             className={Styles.input}
-            size="50"
+            size="40"
             required
           />
-        </div>
-        <div className={Styles.fieldContent}>
-          <label htmlFor="lastName_input" className={Styles.label}>
-            Last Name
-          </label>
           <input
             placeholder="Last Name"
             id="lastName_input"
             className={Styles.input}
             required
           />
-        </div>
-        <div className={Styles.fieldContent}>
-          <label htmlFor="email_input" className={Styles.label}>
-            Email
-          </label>
           <input
             placeholder="Enter Email"
             id="email_input"
             className={Styles.input}
             required
           />
-        </div>
-        <div className={Styles.fieldContent}>
-          <label htmlFor="password1_input" className={Styles.label}>
-            Enter Password
-          </label>
           <input
             type="password"
             placeholder="Enter Password"
@@ -90,23 +79,18 @@ const Register = () => {
             className={Styles.input}
             required
           />
-        </div>
-        <div className={Styles.fieldContent}>
-          <label htmlFor="password2_input" className={Styles.label}>
-            Enter Password Again
-          </label>
           <input
             type="password"
-            placeholder="Enter Password Again"
+            placeholder="Repeat Password"
             id="password2_input"
             className={Styles.input}
             required
           />
-        </div>
-        <button className={Styles.registerBtn}>
-          <b>SUBMIT</b>
-        </button>
-      </form>
+          <button className={Styles.registerBtn}>
+            <b>SIGN UP</b>
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -1,11 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Sofia&display=swap");
+
 .container {
-  background-color: grey;
+  background-color: var(--light-purple);
+  height: 100vh;
+  display: flex;
+}
+.background {
+  width: 40vw;
   height: 100vh;
 }
-.container form {
+.headingContainer {
+  width: fit-content;
+  font-family: "Sofia";
+  margin: auto;
+}
+.headingContainer > img {
+  margin-left: 10px;
+}
+.headingContainer > h3 {
+  margin: 0;
+  font-size: x-large;
+}
+.formContainer {
+  width: 60vw;
+  background-image: url("./form-background.jpg");
+}
+.form {
   padding: 50px;
   width: fit-content;
-  margin: 50px auto;
+  transform: translate(0, 5%);
+  margin: auto;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -31,19 +55,24 @@
   border-bottom: 2px solid black;
   outline: 0;
   margin-top: 10px;
+  font-weight: 700;
 }
 .loginBtn {
   margin-top: 20px;
   cursor: pointer;
-}
-.loginBtn {
+  padding: 10px 5px;
   margin: 30px auto 0 auto;
   width: 200px;
   border-radius: 50px;
   border: 0;
 }
+.loginBtn:hover {
+  background-color: #e6d9f5;
+}
 .signupBtn {
-  text-decoration: none;
   margin: 50px auto 0 auto;
   width: fit-content;
+}
+.signupBtn > a {
+  text-decoration: none;
 }

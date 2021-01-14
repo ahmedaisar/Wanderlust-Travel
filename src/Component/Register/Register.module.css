@@ -1,35 +1,66 @@
-.container form {
-  padding: 20px 50px 40px 50px;
+@import url("https://fonts.googleapis.com/css2?family=Sofia&display=swap");
+
+.container {
+  background-color: grey;
+  height: 100vh;
+  display: flex;
+}
+.background {
+  width: 40vw;
+}
+.headingContainer {
   width: fit-content;
-  margin: 50px auto;
+  font-family: "Sofia";
+  margin: auto;
+}
+.headingContainer > img {
+  margin-left: 10px;
+}
+.headingContainer > h3 {
+  margin: 0;
+  font-size: x-large;
+}
+.formContainer {
+  width: 60vw;
+  background-image: url("./form-background.jpg");
+  /* background-repeat: no-repeat;
+  background-size: cover; */
+}
+.form {
+  padding: 50px;
+  width: fit-content;
+  transform: translate(0, 5%);
+  margin: auto;
   display: flex;
   flex-direction: column;
-  background-color: #0a122a;
+  border-radius: 30px;
+  border: hidden;
+  background-color: white;
 }
 .heading {
   width: fit-content;
-  margin: 40px auto 0 auto;
-}
-.label {
-  color: white;
+  font-size: xx-large;
+  font-weight: 700;
+  margin: 10px auto;
 }
 .input {
+  font-weight: 700;
   padding: 10px;
   border: 0;
+  border-bottom: 2px solid black;
   outline: 0;
-  margin-top: 5px;
-}
-.fieldContent {
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
+  margin-top: 25px;
 }
 .registerBtn {
+  outline: 0;
+  border: 0;
   margin-top: 20px;
-  background-color: #698f3f;
   cursor: pointer;
+  padding: 10px 5px;
+  margin: 30px auto 0 auto;
+  width: 200px;
+  border-radius: 50px;
 }
 .registerBtn:hover {
-  background-color: #e7decd;
-  color: black;
+  background-color: #aedef8;
 }

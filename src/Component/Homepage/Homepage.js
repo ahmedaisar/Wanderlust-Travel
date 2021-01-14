@@ -4,13 +4,13 @@ import Styles from "./Homepage.module.css";
 function Homepage() {
   return (
     <div className={Styles.container}>
-      <h2>Welcome to our website!</h2>
+      <h1 className={Styles.message}>Wanderlust!</h1>
       <div className={Styles.btnContainer}>
         <Link to="/login">
-          <button className={Styles.btnContainer}>Login</button>
+          <button className={Styles.btn}>Login</button>
         </Link>
         <Link to="/register">
-          <button className={Styles.btnContainer}>Register</button>
+          <button className={Styles.btn}>Register</button>
         </Link>
       </div>
     </div>

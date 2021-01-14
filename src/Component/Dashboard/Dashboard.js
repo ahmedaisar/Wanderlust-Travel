@@ -8,6 +8,7 @@ import Hotel from "../Hotel/Hotel.js";
 
 const Dashboard = () => {
   const { currentUser } = useContext(AuthContext);
+  const [loading, setLoading] = useState(true);
   const [loggedOut, setLoggedOut] = useState(false);
   const [hotels, setHotels] = useState([]);
   const [searchedHotels, setSearchedHotels] = useState([]);
@@ -32,6 +33,7 @@ const Dashboard = () => {
       .then((data) => {
         setHotels(data.hotels);
         console.log(data.hotels);
+        setLoading(false);
       });
   }, []);
   const handleLogout = () => {
@@ -66,24 +68,32 @@ const Dashboard = () => {
           <button onClick={() => handleLogout()}>Logout</button>
         </div>
       </div>
-      <div className={Styles.searchBox}>
-        <form onSubmit={(e) => searchHotels(e)}>
-          <label htmlFor="searchInput"> Search For Hotels!</label>
-          <input
-            id="searchInput"
-            placeholder="Enter the city..."
-            size="50"
-            className={Styles.searchInput}
-          />
-        </form>
-      </div>
-      <section className={Styles.hotels}>
-        <ul className={Styles.hotelsList}>
-          {searchedHotels.length > 0
-            ? searchedHotels.map((item) => <Hotel data={item} id={item.code} />)
-            : "Please try again!"}
-        </ul>
-      </section>
+      {loading ? (
+        <h3>Loading....</h3>
+      ) : (
+        <>
+          <div className={Styles.searchBox}>
+            <form onSubmit={(e) => searchHotels(e)}>
+              <label htmlFor="searchInput"> Search For Hotels!</label>
+              <input
+                id="searchInput"
+                placeholder="Enter the city..."
+                size="50"
+                className={Styles.searchInput}
+              />
+            </form>
+          </div>
+          <section className={Styles.hotels}>
+            <ul className={Styles.hotelsList}>
+              {searchedHotels.length > 0
+                ? searchedHotels.map((item) => (
+                    <Hotel data={item} id={item.code} />
+                  ))
+                : null}
+            </ul>
+          </section>
+        </>
+      )}
     </>
   );
 };

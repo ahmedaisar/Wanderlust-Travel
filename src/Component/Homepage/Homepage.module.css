@@ -1,20 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Sofia&display=swap");
+
 .container {
-  width: 300px;
+  width: fit-content;
   padding: 50px;
   margin: 200px auto;
   background-color: grey;
   border-radius: 10px;
 }
-
+.message {
+  font-family: "Sofia", sans-serif;
+}
 .btnContainer {
+  margin-top: 30px;
   display: flex;
   justify-content: space-around;
 }
 
-button {
+.btn {
   padding: 10px 5px;
+  text-decoration: none;
+  cursor: pointer;
 }
-button:hover {
+.btn:hover {
   background-color: black;
   color: white;
 }
