@@ -1,27 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Sofia&display=swap");
 
 .container {
-  width: fit-content;
-  padding: 50px;
-  margin: 200px auto;
-  background-color: grey;
-  border-radius: 10px;
+  height: 100vh;
+  background-image: url("./background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.message {
-  font-family: "Sofia", sans-serif;
+.navbar {
+  padding: 10px;
 }
-.btnContainer {
-  margin-top: 30px;
+.navWrapper {
+  margin: 0 70%;
+  width: 15vw;
+  padding: 0;
   display: flex;
   justify-content: space-around;
 }
-
-.btn {
-  padding: 10px 5px;
-  text-decoration: none;
+.navLinks {
+  margin-top: 10px;
+  font-size: x-large;
+  list-style: none;
   cursor: pointer;
 }
-.btn:hover {
-  background-color: black;
-  color: white;
+.navLinks > a {
+  color: black;
+  text-decoration: none;
+}
+.welcomeMessage {
+  margin: auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 175px;
+}
+.welcomeMessage > img {
+  margin: auto;
+}
+.name {
+  font-size: 60px;
+  font-family: "Sofia";
+  margin: 0 auto;
+}
+.welcomeMessage > p {
+  margin: 0;
+  font-size: 30px;
+  font-family: "Sofia";
 }
