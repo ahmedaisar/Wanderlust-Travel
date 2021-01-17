@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Sofia&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&family=Arapey&display=swap");
 
 .container {
   height: 100vh;
-  background-image: url("./background.jpg");
+  background-image: url("./background.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -28,21 +28,24 @@
 }
 .welcomeMessage {
   margin: auto;
+  margin-left: 30%;
   width: fit-content;
   display: flex;
   flex-direction: column;
-  padding: 175px;
+  padding: 150px;
+  font-family: "Parisienne";
 }
 .welcomeMessage > img {
   margin: auto;
 }
 .name {
-  font-size: 60px;
-  font-family: "Sofia";
+  font-size: 70px;
   margin: 0 auto;
+  font-weight: 100;
 }
 .welcomeMessage > p {
   margin: 0;
-  font-size: 30px;
-  font-family: "Sofia";
+  font-weight: 500;
+  font-size: 35px;
+  font-family: "Arapey";
 }

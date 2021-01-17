@@ -7,17 +7,21 @@ function Homepage() {
       <div className={Styles.navbar}>
         <ul className={Styles.navWrapper}>
           <li className={Styles.navLinks}>
-            <Link to="/login">Login</Link>
+            <Link to="/login">
+              <b>Login</b>
+            </Link>
           </li>
           <li className={Styles.navLinks}>
-            <Link to="/register">Register</Link>
+            <Link to="/register">
+              <b>Register</b>
+            </Link>
           </li>
         </ul>
       </div>
       <div className={Styles.welcomeMessage}>
         <img src={logo} alt="logo" width="100" height="100" />
         <h1 className={Styles.name}>Wanderlust</h1>
-        <p>Welcome to our website!</p>
+        <p>Stay with us, Feel at home.</p>
       </div>
     </div>
   );

@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
 import Styles from "./Dashboard.module.css";
 import fire from "../../firebase.js";
 import SHA256 from "../../SHA256";
 import { AuthContext } from "../../Auth";
 import Hotel from "../Hotel/Hotel.js";
+import logo from "./logo.png";
 
 const Dashboard = () => {
   const { currentUser } = useContext(AuthContext);
@@ -61,28 +63,44 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className={Styles.nav}>
-        <h3 className={Styles.message}>Welcome, {currentUser?.displayName}</h3>
-        <div className={Styles.buttons}>
-          <button>My Bookings</button>
-          <button onClick={() => handleLogout()}>Logout</button>
-        </div>
-      </div>
       {loading ? (
-        <h3>Loading....</h3>
+        <h3>Loading...</h3>
       ) : (
         <>
-          <div className={Styles.searchBox}>
-            <form onSubmit={(e) => searchHotels(e)}>
-              <label htmlFor="searchInput"> Search For Hotels!</label>
-              <input
-                id="searchInput"
-                placeholder="Enter the city..."
-                size="50"
-                className={Styles.searchInput}
-              />
-            </form>
-          </div>
+          <section className={Styles.searchNav}>
+            <div className={Styles.nav}>
+              <div className={Styles.logoWrapper}>
+                <img src={logo} alt="logo" height="50" width="50" />
+                <span>
+                  <b>Wanderlust</b>
+                </span>
+              </div>
+              <div className={Styles.buttons}>
+                <Link to="/bookings">
+                  <span>
+                    <b>My Bookings</b>
+                  </span>
+                </Link>
+                <span onClick={() => handleLogout()}>
+                  <b>Logout</b>
+                </span>
+              </div>
+            </div>
+            <div className={Styles.welcomeMessage}>
+              <h1>Welcome, {currentUser.displayName}</h1>
+            </div>
+            <div className={Styles.searchBox}>
+              <form onSubmit={(e) => searchHotels(e)}>
+                <input
+                  id="searchInput"
+                  placeholder="Enter the city..."
+                  size="50"
+                  className={Styles.searchInput}
+                />
+                <button className={Styles.searchBtn}>Search</button>
+              </form>
+            </div>
+          </section>
           <section className={Styles.hotels}>
             <ul className={Styles.hotelsList}>
               {searchedHotels.length > 0

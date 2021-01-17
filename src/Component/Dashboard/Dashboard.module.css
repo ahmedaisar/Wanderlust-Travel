@@ -2,27 +2,57 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100vw;
-  background-color: grey;
 }
-.message {
-  margin-left: 5%;
-  font-size: x-large;
-}
-.buttons {
-  margin-right: 5%;
-  width: 15vw;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-.searchBox {
+.logoWrapper {
+  margin: 20px 3%;
   display: flex;
   flex-direction: column;
-  width: 300px;
+}
+.logoWrapper > img {
+  margin: auto;
+}
+.buttons {
+  margin-right: 10px;
+  width: 15vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.buttons > span {
+  cursor: pointer;
+}
+.buttons > a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.welcomeMessage {
+  transform: translate(0, -150%);
+  margin: auto;
+  width: fit-content;
+}
+.welcomeMessage > h1 {
+  font-size: xx-large;
+  color: #bdd3e6;
+}
+.searchBox {
+  width: fit-content;
   margin: 25px auto;
 }
 .searchInput {
   padding: 10px 25px;
   outline: none;
+}
+.searchBtn {
+  margin-left: 10px;
+  padding: 10px;
+}
+.searchNav {
+  background-color: white;
+  padding-bottom: 25px;
+  background-image: url("./background.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
