@@ -34,7 +34,7 @@ const Dashboard = () => {
       .then((resp) => resp.json())
       .then((data) => {
         setHotels(data.hotels);
-        console.log(data.hotels);
+        console.log("Completed");
         setLoading(false);
       });
   }, []);
@@ -105,7 +105,9 @@ const Dashboard = () => {
             <ul className={Styles.hotelsList}>
               {searchedHotels.length > 0
                 ? searchedHotels.map((item) => (
-                    <Hotel data={item} id={item.code} />
+                    <li key={item.code}>
+                      <Hotel data={item} id={item.code} />
+                    </li>
                   ))
                 : null}
             </ul>

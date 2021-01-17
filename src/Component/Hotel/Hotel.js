@@ -6,12 +6,12 @@ const Hotel = ({ data, id }) => {
 
   return (
     <>
-      <li key={id} className={Styles.container}>
+      <div className={Styles.container}>
         <p className={Styles.hotelName}>{data.name.content}</p>
         {data.images?.slice(0, 10).map((item) => (
           <img src={image_baseURL + item.path} alt={data.name.content} />
         ))}
-      </li>
+      </div>
     </>
   );
 };

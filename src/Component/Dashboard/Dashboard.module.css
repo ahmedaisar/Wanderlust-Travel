@@ -34,7 +34,6 @@
 }
 .welcomeMessage > h1 {
   font-size: xx-large;
-  color: #bdd3e6;
 }
 .searchBox {
   width: fit-content;
@@ -55,4 +54,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+.hotelsList {
+  padding: 0;
+}
+.hotelsList > li {
+  width: fit-content;
+  margin: 0 auto;
+  list-style: none;
 }
