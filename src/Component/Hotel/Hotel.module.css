@@ -1,8 +1,15 @@
-.container {
-  list-style: none;
-  padding: 30px;
-  width: fit-content;
+.card {
+  margin: 50px;
+  text-align: center;
+  width: 40vw;
 }
-.hotelName {
-  margin: 10px auto;
+.cardBody {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cardText {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
 }

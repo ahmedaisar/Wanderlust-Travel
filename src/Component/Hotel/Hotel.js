@@ -1,17 +1,30 @@
-// import { useEffect } from "react";
 import Styles from "./Hotel.module.css";
+import { Card, Button } from "react-bootstrap";
 
 const Hotel = ({ data, id }) => {
   let image_baseURL = "http://photos.hotelbeds.com/giata/medium/";
-
   return (
     <>
-      <div className={Styles.container}>
-        <p className={Styles.hotelName}>{data.name.content}</p>
-        {data.images?.slice(0, 10).map((item) => (
-          <img src={image_baseURL + item.path} alt={data.name.content} />
-        ))}
-      </div>
+      <Card className={Styles.card}>
+        <Card.Header as="h4">
+          <span>{data.name.content}</span>
+        </Card.Header>
+        <Card.Body className={Styles.cardBody}>
+          <Card.Title>
+            <img
+              src={`${image_baseURL}${data.images[0].path}`}
+              alt={data.name.content}
+            />
+          </Card.Title>
+          <div className={Styles.cardText}>
+            <Card.Text>{data.address.content}</Card.Text>
+            <Card.Text>
+              Contact : <b>{data.phones[0].phoneNumber}</b>
+            </Card.Text>
+          </div>
+          <Button variant="primary">Book Now!</Button>
+        </Card.Body>
+      </Card>
     </>
   );
 };

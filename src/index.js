@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import RouterPack from "./RoutePack";
 import reportWebVitals from "./reportWebVitals";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
   <React.StrictMode>

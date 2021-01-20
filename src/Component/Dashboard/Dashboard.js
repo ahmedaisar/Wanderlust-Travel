@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Redirect } from "react-router";
-import { Link } from "react-router-dom";
 import Styles from "./Dashboard.module.css";
+import Spinner from "react-bootstrap/Spinner";
 import fire from "../../firebase.js";
 import SHA256 from "../../SHA256";
 import { AuthContext } from "../../Auth";
@@ -34,7 +34,7 @@ const Dashboard = () => {
       .then((resp) => resp.json())
       .then((data) => {
         setHotels(data.hotels);
-        console.log("Completed");
+        console.log("Completed", data.hotels);
         setLoading(false);
       });
   }, []);
@@ -64,7 +64,9 @@ const Dashboard = () => {
   return (
     <>
       {loading ? (
-        <h3>Loading...</h3>
+        <Spinner animation="grow" role="status" style={{ margin: "47vh 48vw" }}>
+          <span className="sr-only">Loading...</span>
+        </Spinner>
       ) : (
         <>
           <section className={Styles.searchNav}>
@@ -76,11 +78,9 @@ const Dashboard = () => {
                 </span>
               </div>
               <div className={Styles.buttons}>
-                <Link to="/bookings">
-                  <span>
-                    <b>My Bookings</b>
-                  </span>
-                </Link>
+                <span>
+                  <b>My Bookings</b>
+                </span>
                 <span onClick={() => handleLogout()}>
                   <b>Logout</b>
                 </span>
@@ -101,16 +101,12 @@ const Dashboard = () => {
               </form>
             </div>
           </section>
-          <section className={Styles.hotels}>
-            <ul className={Styles.hotelsList}>
-              {searchedHotels.length > 0
-                ? searchedHotels.map((item) => (
-                    <li key={item.code}>
-                      <Hotel data={item} id={item.code} />
-                    </li>
-                  ))
-                : null}
-            </ul>
+          <section className={Styles.hotelsList}>
+            {searchedHotels.length > 0
+              ? searchedHotels
+                  .filter((item) => item.images)
+                  .map((item) => <Hotel data={item} id={item.code} />)
+              : null}
           </section>
         </>
       )}
