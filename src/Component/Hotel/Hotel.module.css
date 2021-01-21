@@ -1,5 +1,5 @@
 .card {
-  margin: 50px;
+  margin: 25px;
   text-align: center;
   width: 40vw;
 }
@@ -12,4 +12,9 @@
   display: flex;
   flex-direction: column;
   margin: 20px;
+}
+.bookBtn {
+  margin-top: 20px;
+  height: 60px;
+  width: auto;
 }

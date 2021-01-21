@@ -23,8 +23,6 @@
 .formContainer {
   width: 60vw;
   background-image: url("./form-background.jpg");
-  /* background-repeat: no-repeat;
-  background-size: cover; */
 }
 .form {
   padding: 50px;
@@ -41,7 +39,7 @@
   width: fit-content;
   font-size: xx-large;
   font-weight: 700;
-  margin: 10px auto;
+  margin: auto;
 }
 .input {
   font-weight: 700;

@@ -105,7 +105,7 @@ const Dashboard = () => {
             {searchedHotels.length > 0
               ? searchedHotels
                   .filter((item) => item.images)
-                  .map((item) => <Hotel data={item} id={item.code} />)
+                  .map((item) => <Hotel data={item} />)
               : null}
           </section>
         </>

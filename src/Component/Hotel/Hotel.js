@@ -1,11 +1,17 @@
 import Styles from "./Hotel.module.css";
 import { Card, Button } from "react-bootstrap";
+import { useState } from "react";
+import HotelModal from "../HotelModal/HotelModal";
 
 const Hotel = ({ data, id }) => {
   let image_baseURL = "http://photos.hotelbeds.com/giata/medium/";
+
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(true);
+
   return (
     <>
-      <Card className={Styles.card}>
+      <Card className={Styles.card} key={id}>
         <Card.Header as="h4">
           <span>{data.name.content}</span>
         </Card.Header>
@@ -22,9 +28,16 @@ const Hotel = ({ data, id }) => {
               Contact : <b>{data.phones[0].phoneNumber}</b>
             </Card.Text>
           </div>
-          <Button variant="primary">Book Now!</Button>
+          <Button
+            variant="primary"
+            className={Styles.bookBtn}
+            onClick={handleShow}
+          >
+            Book Now!
+          </Button>
         </Card.Body>
       </Card>
+      {show ? <HotelModal data={data} show={show} setShow={setShow} /> : null}
     </>
   );
 };

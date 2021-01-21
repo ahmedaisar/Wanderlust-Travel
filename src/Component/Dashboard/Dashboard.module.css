@@ -40,12 +40,12 @@
   margin: 25px auto;
 }
 .searchInput {
-  padding: 10px 25px;
+  padding: 5px 25px;
   outline: none;
 }
 .searchBtn {
   margin-left: 10px;
-  padding: 10px;
+  padding: 5px 10px;
 }
 .searchNav {
   background-color: white;

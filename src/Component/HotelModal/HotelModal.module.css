@@ -1,0 +1,14 @@
+.inputsContainer {
+  margin-left: 30px;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.checkinDate {
+  margin-top: 10px;
+}
+.checkoutDate {
+  margin-top: 10px;
+}
+.contactContainer {
+  text-align: center;
+}
