@@ -1,9 +1,9 @@
-import Styles from "./Hotel.module.css";
+import Styles from "./HotelCard.module.css";
 import { Card, Button } from "react-bootstrap";
 import { useState } from "react";
 import HotelModal from "../HotelModal/HotelModal";
 
-const Hotel = ({ data, id }) => {
+const HotelCard = ({ data, id }) => {
   let image_baseURL = "http://photos.hotelbeds.com/giata/medium/";
 
   const [show, setShow] = useState(false);
@@ -33,7 +33,7 @@ const Hotel = ({ data, id }) => {
             className={Styles.bookBtn}
             onClick={handleShow}
           >
-            Book Now!
+            View
           </Button>
         </Card.Body>
       </Card>
@@ -42,4 +42,4 @@ const Hotel = ({ data, id }) => {
   );
 };
 
-export default Hotel;
+export default HotelCard;

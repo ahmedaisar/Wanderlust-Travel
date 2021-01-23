@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Redirect } from "react-router";
 import Styles from "./Dashboard.module.css";
-import Spinner from "react-bootstrap/Spinner";
+import { Spinner, Button } from "react-bootstrap";
 import fire from "../../firebase.js";
 import SHA256 from "../../SHA256";
 import { AuthContext } from "../../Auth";
-import Hotel from "../Hotel/Hotel.js";
+import HotelCard from "../HotelCard/HotelCard.js";
 import logo from "./logo.png";
 
 const Dashboard = () => {
@@ -64,9 +64,7 @@ const Dashboard = () => {
   return (
     <>
       {loading ? (
-        <Spinner animation="grow" role="status" style={{ margin: "47vh 48vw" }}>
-          <span className="sr-only">Loading...</span>
-        </Spinner>
+        <Spinner animation="grow" style={{ margin: "47vh 48vw" }} />
       ) : (
         <>
           <section className={Styles.searchNav}>
@@ -97,7 +95,13 @@ const Dashboard = () => {
                   size="50"
                   className={Styles.searchInput}
                 />
-                <button className={Styles.searchBtn}>Search</button>
+                <Button
+                  variant="primary"
+                  className={Styles.searchBtn}
+                  type="submit"
+                >
+                  Search
+                </Button>
               </form>
             </div>
           </section>
@@ -105,7 +109,7 @@ const Dashboard = () => {
             {searchedHotels.length > 0
               ? searchedHotels
                   .filter((item) => item.images)
-                  .map((item) => <Hotel data={item} />)
+                  .map((item) => <HotelCard data={item} />)
               : null}
           </section>
         </>

@@ -37,7 +37,7 @@
 }
 .searchBox {
   width: fit-content;
-  margin: 25px auto;
+  margin: 10px auto;
 }
 .searchInput {
   padding: 5px 25px;
@@ -45,12 +45,13 @@
 }
 .searchBtn {
   margin-left: 10px;
-  padding: 5px 10px;
+  margin-bottom: 5px;
 }
 .searchNav {
   background-color: white;
   padding-bottom: 25px;
-  background-image: url("./background.jpeg");
+  /* background-image: url("./background.jpeg"); */
+  background-color: #d9dddc;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

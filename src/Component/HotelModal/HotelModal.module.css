@@ -1,14 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Lora&family=Playfair+Display&display=swap");
+
 .inputsContainer {
+  padding: 20px;
   margin-left: 30px;
   display: grid;
   grid-template-columns: auto auto;
 }
+.guestsInput > span {
+  font-weight: 500;
+  font-family: "Exo 2", sans-serif;
+}
+.roomsInput > span {
+  font-weight: 500;
+  font-family: "Exo 2", sans-serif;
+}
 .checkinDate {
   margin-top: 10px;
+}
+.checkinDate > span {
+  font-weight: 500;
+  font-family: "Exo 2", sans-serif;
 }
 .checkoutDate {
   margin-top: 10px;
 }
+.checkoutDate > span {
+  font-weight: 500;
+  font-family: "Exo 2", sans-serif;
+}
 .contactContainer {
   text-align: center;
+}
+.roomTypeInput {
+  display: flex;
+  flex-direction: column;
+}
+.roomName {
+  font-family: "Exo 2", sans-serif;
+  font-size: x-large;
+}
+.roomType {
+  padding: 10px;
+}
+.roomTypeDescription {
+  width: fit-content;
+  margin: 0;
+  font-weight: 500;
+  font-family: "Lora", sans-serif;
+}
+.roomAmenities {
+  width: 80%;
+  margin-top: 10px;
+  font-weight: 500;
+  font-family: "Lora", sans-serif;
+}
+.roomTypePrice {
+  float: right;
+  font-size: x-large;
+  transform: translate(0, -300%);
 }
