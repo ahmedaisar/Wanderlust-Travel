@@ -62,6 +62,7 @@ const Login = () => {
               placeholder="Enter Password"
               id="password_input"
               className={Styles.input}
+              autoComplete="off"
               required
             />
           </div>

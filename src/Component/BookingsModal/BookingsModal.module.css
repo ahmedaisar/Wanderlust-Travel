@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Lora&family=Roboto+Condensed&display=swap");
+
 .bookingList {
   list-style-type: none;
   padding: 0 10px;
@@ -5,4 +7,5 @@
 .cancelButton {
   color: red;
   cursor: pointer;
+  font-family: "Lora";
 }

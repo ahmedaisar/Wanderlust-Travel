@@ -263,7 +263,8 @@ const HotelModal = ({ data, show, setShow, searchedCity }) => {
                   <td>Total</td>
                   <td id="totalPrice">
                     {parseInt(selectedRoom.roomPrice) *
-                      selectedRoom.totalRooms +
+                      selectedRoom.totalRooms *
+                      selectedRoom.daysOfStay +
                       249 +
                       56.79}
                   </td>

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Lancelot&family=Old+Standard+TT&family=Rochester&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Lancelot&family=Old+Standard+TT&family=Cormorant+Garamond:wght@500&display=swap");
 
 .nav {
   display: flex;
@@ -38,7 +38,7 @@
 .welcomeMessage > h1 {
   font-size: 65px;
   margin-top: 50px;
-  font-family: "Rochester", cursive;
+  font-family: "Cormorant Garamond", serif;
 }
 .searchBox {
   width: fit-content;

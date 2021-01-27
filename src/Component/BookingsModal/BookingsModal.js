@@ -36,18 +36,28 @@ const BookingsModal = ({ show, setShow }) => {
       let keys = Object.keys(myBookings);
       return data.map((item, index) => (
         <li key={keys[index]} id={keys[index]}>
-          <p style={{ fontSize: "22px" }}>
+          <p
+            style={{
+              fontSize: "22px",
+              fontFamily: "Exo 2",
+              textDecoration: "underline",
+            }}
+          >
             Hotel in {item.hotelCity.split("")[0].toUpperCase()}
             {item.hotelCity.split("").slice(1)}
           </p>
-          <p style={{ fontSize: "18px" }}>{item.hotelName}</p>
-          <p>
+          <p style={{ fontSize: "18px", fontFamily: "Exo 2" }}>
+            {item.hotelName}
+          </p>
+          <p style={{ fontFamily: "Lora" }}>
             From {item.checkinDate} to {item.checkoutDate}
           </p>
-          <p>
+          <p style={{ fontFamily: "Lora" }}>
             {item.totalGuests} Guests, {item.roomType} x {item.totalRooms}
           </p>
-          <p>Payment done of &#x20b9;{item.totalPrice}</p>
+          <p style={{ fontFamily: "Lora" }}>
+            Payment done of &#x20b9;{item.totalPrice}
+          </p>
           <p className={Styles.cancelButton} onClick={(e) => cancelBooking(e)}>
             Cancel
           </p>
@@ -60,7 +70,7 @@ const BookingsModal = ({ show, setShow }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Your Bookings</Modal.Title>
+        <Modal.Title>My Bookings</Modal.Title>
       </Modal.Header>
       {loading ? (
         <Spinner animation="grow" style={{ margin: "25% 48%" }} />
