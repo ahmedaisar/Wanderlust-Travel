@@ -10,14 +10,13 @@
   padding: 10px;
 }
 .navWrapper {
-  margin: 0 70%;
-  width: 15vw;
+  margin: 10px 75%;
+  width: 200px;
   padding: 0;
   display: flex;
   justify-content: space-around;
 }
 .navLinks {
-  margin-top: 10px;
   font-size: x-large;
   list-style: none;
   cursor: pointer;

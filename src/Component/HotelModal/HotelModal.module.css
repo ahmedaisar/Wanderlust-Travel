@@ -59,3 +59,22 @@
   font-size: x-large;
   transform: translate(0, -300%);
 }
+.finalBookingValidationForm {
+  display: flex;
+  flex-direction: column;
+}
+.finalBookingValidationForm > p {
+  width: fit-content;
+  margin: 10px;
+}
+.finalBookingValidationForm label {
+  width: 200px;
+  margin: 5px auto 5px 10px;
+}
+.phoneNumber {
+  width: 175px;
+  margin: 5px auto 5px 10px;
+}
+.paymentTypeForm {
+  margin: 10px;
+}

@@ -1,0 +1,8 @@
+.bookingList {
+  list-style-type: none;
+  padding: 0 10px;
+}
+.cancelButton {
+  color: red;
+  cursor: pointer;
+}

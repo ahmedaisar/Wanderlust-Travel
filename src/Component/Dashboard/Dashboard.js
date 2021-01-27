@@ -6,6 +6,7 @@ import fire from "../../firebase.js";
 import SHA256 from "../../SHA256";
 import { AuthContext } from "../../Auth";
 import HotelCard from "../HotelCard/HotelCard.js";
+import BookingsModal from "../BookingsModal/BookingsModal";
 import logo from "./logo.png";
 
 const Dashboard = () => {
@@ -14,9 +15,13 @@ const Dashboard = () => {
   const [loggedOut, setLoggedOut] = useState(false);
   const [hotels, setHotels] = useState([]);
   const [searchedHotels, setSearchedHotels] = useState([]);
+  const [searchedCity, setSearchedCity] = useState();
+  const [show, setShow] = useState(false);
 
-  const API_KEY = "c88483bc60e895cc24cee3534aa2363a";
-  const API_SECRET = "eba306e165";
+  const handleShow = () => setShow(true);
+
+  const API_KEY = process.env.REACT_APP_API_KEY;
+  const API_SECRET = process.env.REACT_APP_SECRET_KEY;
   let timestamp = Math.floor(Date.now() / 1000);
   const X_SIGNATURE = SHA256(`${API_KEY}${API_SECRET}${timestamp}`);
 
@@ -34,10 +39,11 @@ const Dashboard = () => {
       .then((resp) => resp.json())
       .then((data) => {
         setHotels(data.hotels);
-        console.log("Completed", data.hotels);
+        console.log("Completed");
         setLoading(false);
       });
   }, []);
+
   const handleLogout = () => {
     if (window.confirm("Are you sure you want to Logout?")) {
       fire
@@ -55,6 +61,7 @@ const Dashboard = () => {
       (item) => item.city.content === searchInput.toUpperCase()
     );
     setSearchedHotels(results);
+    setSearchedCity(searchInput);
   };
 
   if (loggedOut) {
@@ -77,7 +84,7 @@ const Dashboard = () => {
               </div>
               <div className={Styles.buttons}>
                 <span>
-                  <b>My Bookings</b>
+                  <b onClick={handleShow}>My Bookings</b>
                 </span>
                 <span onClick={() => handleLogout()}>
                   <b>Logout</b>
@@ -85,7 +92,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className={Styles.welcomeMessage}>
-              <h1>Welcome, {currentUser.displayName}</h1>
+              <h1>Welcome {currentUser.displayName.split(" ")[0]}</h1>
             </div>
             <div className={Styles.searchBox}>
               <form onSubmit={(e) => searchHotels(e)}>
@@ -109,9 +116,12 @@ const Dashboard = () => {
             {searchedHotels.length > 0
               ? searchedHotels
                   .filter((item) => item.images)
-                  .map((item) => <HotelCard data={item} />)
+                  .map((item) => (
+                    <HotelCard data={item} searchedCity={searchedCity} />
+                  ))
               : null}
           </section>
+          {show ? <BookingsModal show={show} setShow={setShow} /> : null}
         </>
       )}
     </>

@@ -1,9 +1,12 @@
+import { useState } from "react";
+import { Redirect } from "react-router";
 import Styles from "./Register.module.css";
 import fire from "../../firebase.js";
 import background from "./register-page.jpg";
 import logo from "./logo.png";
 
 const Register = () => {
+  const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const handleRegister = (e) => {
     e.preventDefault();
     var firstName = document.querySelector("#firstName_input").value;
@@ -30,18 +33,26 @@ const Register = () => {
         .auth()
         .createUserWithEmailAndPassword(email, password1)
         .then((result) => {
-          result.user.updateProfile({ displayName: firstName });
+          result.user.updateProfile({
+            displayName: firstName + " " + lastName,
+          });
         })
         .then(() => {
-          alert("User Successfully Created!");
+          alert("User Successfully Created! Please login to continue.");
         })
+        .then(() => setRegistrationSuccess(true))
         .catch((error) => {
           var errorCode = error.code;
           var errorMessage = error.message;
+          alert(errorMessage);
           console.log(errorCode, errorMessage);
         });
     }
   };
+
+  if (registrationSuccess) {
+    return <Redirect to="login" />;
+  }
 
   return (
     <div className={Styles.container}>

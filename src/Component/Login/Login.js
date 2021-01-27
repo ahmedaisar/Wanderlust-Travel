@@ -30,9 +30,11 @@ const Login = () => {
         });
     }
   };
+
   if (currentUser) {
     return <Redirect to="/dashboard" />;
   }
+
   return (
     <div className={Styles.container}>
       <img className={Styles.background} src={background} alt="login page" />

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Lancelot&family=Old+Standard+TT&family=Rochester&display=swap");
+
 .nav {
   display: flex;
   flex-direction: row;
@@ -12,12 +14,13 @@
   margin: auto;
 }
 .buttons {
-  margin-right: 10px;
-  width: 15vw;
+  height: fit-content;
+  margin: 40px 20px;
+  width: 200px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  flex-direction: row;
+  color: white;
 }
 .buttons > span {
   cursor: pointer;
@@ -33,11 +36,13 @@
   width: fit-content;
 }
 .welcomeMessage > h1 {
-  font-size: xx-large;
+  font-size: 65px;
+  margin-top: 50px;
+  font-family: "Rochester", cursive;
 }
 .searchBox {
   width: fit-content;
-  margin: 10px auto;
+  margin: 50px auto 50px auto;
 }
 .searchInput {
   padding: 5px 25px;
@@ -50,11 +55,9 @@
 .searchNav {
   background-color: white;
   padding-bottom: 25px;
-  /* background-image: url("./background.jpeg"); */
-  background-color: #d9dddc;
-  background-position: center;
+  background-image: url("./background.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 .hotelsList {
   width: fit-content;
