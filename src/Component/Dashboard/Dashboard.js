@@ -34,6 +34,7 @@ const Dashboard = () => {
       headers: {
         "Api-key": API_KEY,
         "X-Signature": X_SIGNATURE,
+        "Access-Control-Allow-Origin": "*",
       },
     })
       .then((resp) => resp.json())
@@ -71,7 +72,16 @@ const Dashboard = () => {
   return (
     <>
       {loading ? (
-        <Spinner animation="grow" style={{ margin: "47vh 48vw" }} />
+        <div
+          style={{
+            width: "fit-content",
+            margin: "45vh auto",
+            textAlign: "center",
+          }}
+        >
+          <p>Setting up your account, Please wait.</p>
+          <Spinner animation="grow" />
+        </div>
       ) : (
         <>
           <section className={Styles.searchNav}>

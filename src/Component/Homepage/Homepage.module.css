@@ -48,3 +48,15 @@
   font-size: 35px;
   font-family: "Arapey";
 }
+
+@media only screen and (max-width: 576px) {
+  .welcomeMessage {
+    margin: auto;
+    padding: 25vh 0;
+  }
+  .navWrapper {
+    width: 50vw;
+    margin: 20px 0;
+    float: right;
+  }
+}

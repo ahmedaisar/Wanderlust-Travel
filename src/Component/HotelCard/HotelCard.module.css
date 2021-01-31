@@ -18,3 +18,17 @@
   height: 60px;
   width: auto;
 }
+
+@media only screen and (max-width: 576px) {
+  .card {
+    width: 85vw;
+  }
+  .cardBody {
+    flex-direction: column;
+  }
+  .bookBtn {
+    height: 50px;
+    width: 100px;
+    margin: auto;
+  }
+}

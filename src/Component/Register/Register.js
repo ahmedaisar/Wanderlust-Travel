@@ -87,6 +87,7 @@ const Register = () => {
             type="password"
             placeholder="Enter Password"
             id="password1_input"
+            autoComplete="off"
             className={Styles.input}
             required
           />
@@ -94,6 +95,7 @@ const Register = () => {
             type="password"
             placeholder="Repeat Password"
             id="password2_input"
+            autoComplete="off"
             className={Styles.input}
             required
           />

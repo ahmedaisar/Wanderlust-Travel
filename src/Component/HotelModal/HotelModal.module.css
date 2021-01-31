@@ -78,3 +78,9 @@
 .paymentTypeForm {
   margin: 10px;
 }
+
+@media only screen and (max-width: 576px) {
+  .inputsContainer {
+    margin: 0;
+  }
+}

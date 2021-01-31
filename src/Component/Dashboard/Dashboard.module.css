@@ -53,7 +53,6 @@
   margin-bottom: 5px;
 }
 .searchNav {
-  background-color: white;
   padding-bottom: 25px;
   background-image: url("./background.jpg");
   background-repeat: no-repeat;
@@ -64,4 +63,38 @@
   display: grid;
   grid-template-columns: auto auto;
   margin: auto;
+}
+
+@media only screen and (max-width: 576px) {
+  .welcomeMessage {
+    transform: translate(0, -100%);
+  }
+  .welcomeMessage > h1 {
+    width: fit-content;
+    margin: 175px auto 0 auto;
+    font-size: 50px;
+  }
+  .buttons {
+    margin: 40px 0;
+    color: black;
+    width: 225px;
+    justify-content: space-evenly;
+  }
+  .searchBox {
+    width: fit-content;
+    margin: 20px auto;
+    width: 90vw;
+  }
+  .searchBox > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .searchBtn {
+    margin: 25px 0;
+  }
+  .hotelsList {
+    display: flex;
+    flex-direction: column;
+  }
 }

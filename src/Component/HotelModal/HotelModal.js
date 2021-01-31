@@ -37,7 +37,9 @@ const HotelModal = ({ data, show, setShow, searchedCity }) => {
     const dateDiff =
       (new Date(checkoutDate) - new Date(checkinDate)) / (1000 * 3600 * 24);
 
-    if (checkinDate === checkoutDate) {
+    if (roomsInput <= 0 || guestsInput <= 0) {
+      alert("Please enter the inputs correctly!");
+    } else if (checkinDate === checkoutDate) {
       alert("Checkin and Checkout cannot be same day!");
     } else if (checkoutDate < checkinDate) {
       alert("Check-out date cannot be before Check-in!");
@@ -78,7 +80,11 @@ const HotelModal = ({ data, show, setShow, searchedCity }) => {
     let hotelCity = searchedCity;
     let firebaseURL = `https://kiitproject-1f1e2-default-rtdb.firebaseio.com/${currentUser.uid}/.json`;
     const totalPrice =
-      parseInt(selectedRoom.roomPrice) * selectedRoom.totalRooms + 249 + 56.79;
+      parseInt(selectedRoom.roomPrice) *
+        selectedRoom.totalRooms *
+        selectedRoom.daysOfStay +
+      249 +
+      56.79;
     const phoneNumber = document.getElementById("phoneNumber").value;
     if (isNaN(phoneNumber) === true || phoneNumber === "") {
       alert("Please enter correct contact number!");
@@ -261,7 +267,7 @@ const HotelModal = ({ data, show, setShow, searchedCity }) => {
                 </tr>
                 <tr>
                   <td>Total</td>
-                  <td id="totalPrice">
+                  <td>
                     {parseInt(selectedRoom.roomPrice) *
                       selectedRoom.totalRooms *
                       selectedRoom.daysOfStay +
